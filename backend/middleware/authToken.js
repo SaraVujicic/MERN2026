@@ -1,0 +1,46 @@
+const jwt = require('jsonwebtoken')
+
+async function authToken(req, res, next) {
+    try {
+        const token = req.cookies?.token 
+
+        console.log("token", token)
+        
+        // 1. POPRAVLJENO: Dodat status 401 za nepostojeći token
+        if(!token){
+            return res.status(401).json({
+                message : "Please Login!",
+                error : true,
+                success : false 
+            })
+        }
+
+        jwt.verify(token, process.env.TOKEN_SECRET_KEY, function(err, decoded) {
+            console.log(err)
+            console.log("decoded", decoded)
+
+            // 2. POPRAVLJENO: Ako token nije validan, šaljemo grešku i NE idemo na next()
+            if(err){
+                console.log("error auth", err)
+                return res.status(401).json({
+                    message : "Session expired or invalid token. Please login again.",
+                    error : true,
+                    success : false 
+                })
+            }
+
+            req.userId = decoded?._id
+            next()
+        });
+
+    } catch(err) {
+       res.status(400).json({
+        message : err.message || err,
+        data : [],
+        error : true,
+        success : false 
+       })
+    }
+}
+
+module.exports = authToken
