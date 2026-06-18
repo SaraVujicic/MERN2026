@@ -21,7 +21,7 @@ const updateAddToCartProduct = async(req,res)=>{
         })
 
     }catch(err){
-        req.json({
+        res.json({
           message : err?.message || err,
           error :  true,
           success : false ,

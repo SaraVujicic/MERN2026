@@ -40,9 +40,9 @@ const UploadProduct = ({
 
   }
 
-  const handleUploadProduct = (e) => {
+  const handleUploadProduct = async(e) => {
     const file = e.target.files[0]
-    const uploadImageCloudinary = uploadImage(file)
+    const uploadImageCloudinary = await uploadImage(file)
 
     setData((preve) => {
       return {

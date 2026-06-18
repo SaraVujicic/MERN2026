@@ -1,0 +1,359 @@
+[
+  {
+    "name": "Elegantna Ženska Torba Classic",
+    "description": "Elegantna ženska torba od kvalitetne eko-kože, idealna za poslovne i večernje prilike.",
+    "price": 4500,
+    "category": "bags",
+    "image": "/assest/bags1.jpg",
+    "countInStock": 15
+  },
+  {
+    "name": "Casual Dnevna Torba",
+    "description": "Prostrana i praktična torba za svaki dan sa dugim podesivim kaišem.",
+    "price": 3200,
+    "category": "bags",
+    "image": "/assest/bags2.jpeg",
+    "countInStock": 20
+  },
+  {
+    "name": "Svečana Pismo Torba",
+    "description": "Mala svečana torba sa lančićem, savršena za svadbe i proslave.",
+    "price": 2800,
+    "category": "bags",
+    "image": "/assest/bags3.jpg",
+    "countInStock": 10
+  },
+  {
+    "name": "Premium Kožna Torba Luxe",
+    "description": "Luksuzna torba od prirodne kože sa zlatnim detaljima i više pregrada.",
+    "price": 8900,
+    "category": "bags",
+    "image": "/assest/bags4.jpg",
+    "countInStock": 5
+  },
+  {
+    "name": "Sportska Torba Trendy",
+    "description": "Lagana i vodootporna sportska torba, pogodna za trening ili kratka putovanja.",
+    "price": 3500,
+    "category": "bags",
+    "image": "/assest/bags11.jpeg",
+    "countInStock": 12
+  },
+  {
+    "name": "Gradski Ranac Urban",
+    "description": "Moderan i lagan ranac za svakodnevne aktivnosti sa pregradom za tablet.",
+    "price": 3900,
+    "category": "backpack",
+    "image": "/assest/backpack1.jpg",
+    "countInStock": 25
+  },
+  {
+    "name": "Putni Ranac Adventure",
+    "description": "Veliki i izdržljiv ranac sa anatomskim leđima, idealan za planinarenje i putovanja.",
+    "price": 6500,
+    "category": "backpack",
+    "image": "/assest/backpack2.jpg",
+    "countInStock": 8
+  },
+  {
+    "name": "Poslovni Ranac Smart",
+    "description": "Ranac sa posebnim ojačanim delom za laptop do 15.6 inča i USB priključkom.",
+    "price": 5800,
+    "category": "backpack",
+    "image": "/assest/backpack3.jpg",
+    "countInStock": 14
+  },
+  {
+    "name": "Školski Ranac Comfort",
+    "description": "Ranac sa ergonomskim dizajnom i veselim dezenom za tinejdžere.",
+    "price": 3400,
+    "category": "backpack",
+    "image": "/assest/backpack4.jpeg",
+    "countInStock": 18
+  },
+  {
+    "name": "Mini Modni Ranac",
+    "description": "Mali ženski modni ranac od mekane kože, savršen za šetnju.",
+    "price": 2900,
+    "category": "backpack",
+    "image": "/assest/backpack5.jpeg",
+    "countInStock": 15
+  },
+  {
+    "name": "Kožni Muški Novčanik Classic",
+    "description": "Klasičan muški novčanik od prirodne kože sa pregradama za kartice i novac.",
+    "price": 2500,
+    "category": "wallets",
+    "image": "/assest/wallets1.jpeg",
+    "countInStock": 30
+  },
+  {
+    "name": "Ženski Novčanik Elegance",
+    "description": "Veliki ženski novčanik sa rajsferšlusom i elegantnim štepom.",
+    "price": 3100,
+    "category": "wallets",
+    "image": "/assest/wallets2.jpeg",
+    "countInStock": 22
+  },
+  {
+    "name": "Slim Novčanik za Kartice",
+    "description": "Kompaktan i tanak novčanik za kartice sa RFID zaštitom.",
+    "price": 1800,
+    "category": "wallets",
+    "image": "/assest/wallets3.jpeg",
+    "countInStock": 40
+  },
+  {
+    "name": "Mali Novčanik Retro",
+    "description": "Mali ženski novčanik retro dizajna sa kopčom za sitan novac.",
+    "price": 1500,
+    "category": "wallets",
+    "image": "/assest/wallets4.jpeg",
+    "countInStock": 17
+  },
+  {
+    "name": "Premium Ženski Novčanik Gold",
+    "description": "Luksuzni kožni novčanik u zlatnoj boji sa bogatim unutrašnjim pregradama.",
+    "price": 4200,
+    "category": "wallets",
+    "image": "/assest/wallets5.jpeg",
+    "countInStock": 9
+  },
+  {
+    "name": "Ženska Modna Torba CD-8833",
+    "description": "Modna ženska torba srednje veličine, dostupna u maslinastoj i beloj boji. Idealna za prolećne i letnje kombinacije.",
+    "price": 3800,
+    "category": "bags",
+    "image": [
+      "/assest/cd-8833_kak.jpg",
+      "/assest/cd-8833_wht.jpg"
+    ],
+    "countInStock": 10
+  },
+  {
+    "name": "Elegantna Večernja Pismo Torba CD-9594",
+    "description": "Elegantna večernja pismo torba sa lancem. Dostupna u više prelepih boja i dezena sa vrhunskom teksturom.",
+    "price": 4200,
+    "category": "bags",
+    "image": [
+      "/assest/cd-9594_1_.png",
+      "/assest/cd-9594_2_.png",
+      "/assest/cd-9594_3_.png",
+      "/assest/cd-9594_6_.png"
+    ],
+    "countInStock": 12
+  },
+  {
+    "name": "Kožna Torba CD-9676",
+    "description": "Kvalitetna i izdržljiva kožna torba sa ojačanim ručkama i više unutrašnjih pregrada za savršenu organizaciju.",
+    "price": 7500,
+    "category": "bags",
+    "image": [
+      "/assest/cd-9676_8_.png",
+      "/assest/cd-9676_10_.png",
+      "/assest/cd-9676_12_.png",
+      "/assest/cd-9676_13_.png"
+    ],
+    "countInStock": 8
+  },
+  {
+    "name": "Dnevna Torba CD-9732",
+    "description": "Ležerna dnevna torba od mekog materijala, prostrana i lagana za celodnevno nošenje.",
+    "price": 3200,
+    "category": "bags",
+    "image": [
+      "/assest/cd-9732_kaki.jpg",
+      "/assest/cd-9732_wht.jpg"
+    ],
+    "countInStock": 14
+  },
+  {
+    "name": "Premium Torba CD-9736",
+    "description": "Ekskluzivna torba sa prepoznatljivim metalnim kopčama i detaljima. Više pregrada i vrhunska završna obrada.",
+    "price": 9500,
+    "category": "bags",
+    "image": [
+      "/assest/cd-9736_2_.jpg",
+      "/assest/cd-9736_3_.jpg",
+      "/assest/cd-9736_4_.jpg",
+      "/assest/cd-9736_5_.jpg",
+      "/assest/cd-9736_6_.jpg",
+      "/assest/cd-9736_7_.jpg",
+      "/assest/cd-9736_8_.jpg",
+      "/assest/cd-9736_10__1.jpg"
+    ],
+    "countInStock": 6
+  },
+  {
+    "name": "Luksuzna Ženska Tašna LX-7152",
+    "description": "Tašna od fine prirodne kože sa elegantnim prošivima i modernom šnalom. Savršen izbor za posebne prilike.",
+    "price": 11000,
+    "category": "bags",
+    "image": [
+      "/assest/lx-7152.jpg",
+      "/assest/lx-7152_2_.jpg",
+      "/assest/lx-7152_4_.jpg"
+    ],
+    "countInStock": 4
+  },
+  {
+    "name": "Torba za Laptop 15.6 Classic",
+    "description": "Funkcionalna torba za laptop sa pregradom za punjač i dokumenta. Otporna na habanje i vodu.",
+    "price": 3400,
+    "category": "bags",
+    "image": "/assest/laptop-bag.jpg",
+    "countInStock": 20
+  },
+  {
+    "name": "Retro Kožna Torba",
+    "description": "Retro ženska torba od brušene kože, sa prostranom unutrašnjošću i vintage izgledom.",
+    "price": 5400,
+    "category": "bags",
+    "image": "/assest/bag2.jpeg",
+    "countInStock": 8
+  },
+  {
+    "name": "Mala Dnevna Torbica",
+    "description": "Mala, ali izuzetno praktična ženska torbica za osnovne sitnice poput telefona i ključeva.",
+    "price": 1900,
+    "category": "bags",
+    "image": "/assest/bags5.jpeg",
+    "countInStock": 25
+  },
+  {
+    "name": "Mini Torba Trendy",
+    "description": "Trendi mini ženska torbica sa podesivim kaišem, pogodna za šetnje i izlaske.",
+    "price": 2100,
+    "category": "bags",
+    "image": "/assest/bags6.jpeg",
+    "countInStock": 30
+  },
+  {
+    "name": "Crossbody Torbica Simple",
+    "description": "Jednostavna i elegantna crossbody torbica, idealna za svaku priliku.",
+    "price": 2300,
+    "category": "bags",
+    "image": "/assest/bags7.jpeg",
+    "countInStock": 15
+  },
+  {
+    "name": "Casual Torbica sa Kopčom",
+    "description": "Moderna mala torba sa ukrasnom kopčom i praktičnom pregradom.",
+    "price": 2200,
+    "category": "bags",
+    "image": "/assest/bags8.jpeg",
+    "countInStock": 18
+  },
+  {
+    "name": "Ženska Torbica Glam",
+    "description": "Elegantna ženska torbica od lakovane kože sa sjajnim detaljima.",
+    "price": 2600,
+    "category": "bags",
+    "image": "/assest/bags9.jpeg",
+    "countInStock": 10
+  },
+  {
+    "name": "Dnevna Torba Basic",
+    "description": "Klasična dnevna torba srednje veličine, jednostavnog i čistog dizajna.",
+    "price": 2700,
+    "category": "bags",
+    "image": "/assest/bags10.jpeg",
+    "countInStock": 15
+  },
+  {
+    "name": "Torba na Rame Soft",
+    "description": "Mekana torba na rame sa velikim kapacitetom i udobnim ručkama.",
+    "price": 3800,
+    "category": "bags",
+    "image": "/assest/bags12.jpg",
+    "countInStock": 12
+  },
+  {
+    "name": "Ranac za Trening Active",
+    "description": "Lagani i prozračni sportski ranac, savršen za fitnes, teretanu ili trčanje.",
+    "price": 3200,
+    "category": "backpack",
+    "image": "/assest/backpack6.jpeg",
+    "countInStock": 20
+  },
+  {
+    "name": "Moderan Mini Ranac",
+    "description": "Ženski modni mini ranac sa elegantnim detaljima i patentnim zatvaračima.",
+    "price": 3100,
+    "category": "backpack",
+    "image": "/assest/backpack7.jpeg",
+    "countInStock": 14
+  },
+  {
+    "name": "Ranac za Školu Lite",
+    "description": "Jednostavan školski ranac sa prednjim džepom i podstavljenim naramenicama.",
+    "price": 2800,
+    "category": "backpack",
+    "image": "/assest/backpack8.jpeg",
+    "countInStock": 22
+  },
+  {
+    "name": "Vodootporni Ranac Shield",
+    "description": "Ranac od vodootpornog materijala, idealan za loše vremenske uslove i vožnju bicikla.",
+    "price": 4300,
+    "category": "backpack",
+    "image": "/assest/backpack9.jpeg",
+    "countInStock": 10
+  },
+  {
+    "name": "Sportski Ranac Explorer",
+    "description": "Ergonomski sportski ranac sa mrežastim pregradama za boce sa vodom.",
+    "price": 3600,
+    "category": "backpack",
+    "image": "/assest/backpack10.jpeg",
+    "countInStock": 16
+  },
+  {
+    "name": "Kožni Novčanik sa Rajsferšlusom",
+    "description": "Kompaktan kožni novčanik sa metalnim rajsferšlusom i džepom za kovanice.",
+    "price": 2700,
+    "category": "wallets",
+    "image": "/assest/wallets6.jpeg",
+    "countInStock": 25
+  },
+  {
+    "name": "Ženski Novčanik Bow",
+    "description": "Šarmantan ženski novčanik sa ukrasnom mašnicom i pregradom za fotografije.",
+    "price": 2400,
+    "category": "wallets",
+    "image": "/assest/wallets7.jpeg",
+    "countInStock": 18
+  },
+  {
+    "name": "Mini Wallet Cardholder",
+    "description": "Kompaktni mini novčanik-držač za kartice od kvalitetne reljefne kože.",
+    "price": 1900,
+    "category": "wallets",
+    "image": "/assest/wallets8.jpeg",
+    "countInStock": 35
+  },
+  {
+    "name": "Elegantni Dugi Novčanik",
+    "description": "Dugačak ženski novčanik sa mnogo prostora za novčanice, kartice i telefon.",
+    "price": 3300,
+    "category": "wallets",
+    "image": "/assest/wallets9.jpeg",
+    "countInStock": 15
+  },
+  {
+    "name": "Sportski Novčanik sa Čičkom",
+    "description": "Izdržljiv i praktičan sportski novčanik sa čičak trakom, idealan za mlade.",
+    "price": 1400,
+    "category": "wallets",
+    "image": "/assest/wallets10.jpeg",
+    "countInStock": 40
+  },
+  {
+    "name": "Retro Novčanik od Svinjske Kože",
+    "description": "Mekani kožni novčanik u retro stilu sa prelepim prirodnim šarama.",
+    "price": 2900,
+    "category": "wallets",
+    "image": "/assest/wallets11.jpeg",
+    "countInStock": 12
+  }
+]

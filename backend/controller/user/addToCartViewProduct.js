@@ -1,3 +1,5 @@
+const addToCartModel = require("../../models/cartProduct")
+
 const addToCartViewProduct = async(req,res)=>{
     try {
       const currentUser = req.userId

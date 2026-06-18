@@ -143,7 +143,6 @@ const ProductDetails = () => {
  
           <div className='flex items-center gap-3 my-2  w-full'>
           <button className='h-6 lg:h-8 bg-slate-200 rounded animate-pulse  w-full'></button>
-          <button  className='h-6 lg:h-8 bg-slate-200 rounded animate-pulse  w-full'></button>
           </div>
  
           <div className=' w-full'>
@@ -173,7 +172,6 @@ const ProductDetails = () => {
  
           <div className='flex items-center gap-3 my-2'>
           <button className='border-2 border-pink-300 rounded px-3 py-1 min-w-[120px] text-pink-600 font-medium hover:bg-pink-500 hover:text-white'onClick={(e)=>handleBuyProduct(e,data?._id)} >Buy</button>
-          <button  className='border-2 border-pink-300 rounded px-3 py-1 min-w-[120px] text-pink-600 font-medium hover:bg-pink-500 hover:text-white' onClick={(e)=>handleAddToCart(e,data?._id)}>Add to category</button>
           </div>
  
           <div>

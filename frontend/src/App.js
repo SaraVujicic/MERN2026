@@ -54,7 +54,7 @@ function App() {
      fetchUserAddToCart
    }}>
     <ToastContainer 
-     position='top-center '
+     position='top-center'
     />
     
     <Header/>
