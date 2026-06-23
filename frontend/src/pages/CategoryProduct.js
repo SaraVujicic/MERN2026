@@ -19,72 +19,91 @@ const CategoryProduct = () => {
     
 
     const [selectCategory,setSelectCategory] = useState(urlCategoryListObject)
-    const [filterCategoryList,setFilterCategoryList] = useState([])
+    const [filterCategoryList,setFilterCategoryList] = useState(urlCategoryListInArray)
 
     const [sortBy,setSortBy] = useState("")
+    const [currentPage, setCurrentPage] = useState(1)
+    const [totalPage, setTotalPage] = useState(1)
+    const [totalProduct, setTotalProduct] = useState(0)
+    const limit = 12
 
 
 
 
 
-    const fetchData =async()=>{
-      const response =await fetch(SummaryApi.filterProduct.url,{
-        method : SummaryApi.filterProduct.method,
-        headers : {
-          "content-type" : "application.json"
-        },
-        body : JSON.stringify({
-          category : filterCategoryList
+    const fetchData =async(page = currentPage)=>{
+      setLoading(true)
+      try {
+        const response =await fetch(SummaryApi.filterProduct.url,{
+          method : SummaryApi.filterProduct.method,
+          headers : {
+            "content-type" : "application/json"
+          },
+          body : JSON.stringify({
+            category : filterCategoryList,
+            page,
+            limit
+          })
         })
-      })
 
-      const dataResponse =await response.json()
+        const dataResponse =await response.json()
 
-      setData(dataResponse?.data || []) 
+        setData(dataResponse?.data || []) 
+        setTotalProduct(dataResponse?.totalProduct || 0)
+        setTotalPage(dataResponse?.totalPage || 1)
+      } finally {
+        setLoading(false)
+      }
 
    
     }
 
     const handleSelectCategory =(e)=>{
-      const {name,value,checked} = e.target
-      setSelectCategory((preve)=>{
-        return {
-          ...preve,
-          [value] : checked
+      const {value,checked} = e.target
+      setCurrentPage(1)
+      const nextSelectCategory = {
+        ...selectCategory,
+        [value] : checked
+      }
+
+      const arrayOfCategory = Object.keys(nextSelectCategory).map(categoryKeyName =>{
+        if(nextSelectCategory[categoryKeyName]){
+          return categoryKeyName
         }
+
+        return null
+      }).filter(el => el)
+
+      setSelectCategory(nextSelectCategory)
+      setFilterCategoryList(arrayOfCategory)
+
+      const urlformat = arrayOfCategory.map((el,index) => {
+        if((arrayOfCategory.length - 1) === index){
+          return `category=${el}`
+        }
+
+        return `category=${el}&`
       })
+
+      navigate("/product-category?"+urlformat.join(""))
 
 
     }
 
   useEffect(()=>{
-    fetchData()
-  },[filterCategoryList])
+    fetchData(currentPage)
+  },[filterCategoryList, currentPage])
 
-    useEffect(()=>{
-     const arrayOfCategory = Object.keys(selectCategory).map(categoryKeyName =>{
-     if(selectCategory[categoryKeyName]){
-      return categoryKeyName
-     }
-
-     return null 
-
-     }).filter(el => el)
-
-     setFilterCategoryList(arrayOfCategory)
-
-     //format for url change when change on the chackbox
-     const urlformat = arrayOfCategory.map((el,index) => {
-      if((arrayOfCategory.length- 1) === index){
-        return  `category=${el}`
+    const handlePageChange = (pageNumber) => {
+      if (pageNumber < 1 || pageNumber > totalPage) {
+        return
       }
-      return `category=${el}&&`
-     })
 
-     
-     navigate("/product-category?"+urlformat.join(""))
+      setCurrentPage(pageNumber)
+    }
 
-    },[selectCategory])
+    const startItem = totalProduct === 0 ? 0 : ((currentPage - 1) * limit) + 1
+    const endItem = Math.min(currentPage * limit, totalProduct)
 
     const handleOnChangesSortBy = (e)=>{
       const {value} = e.target
@@ -92,12 +111,12 @@ const CategoryProduct = () => {
       setSortBy(value)
 
       if(value === 'asc'){
-        setData(preve => preve.sort((a,b)=> a.sellingPrice - b.sellingPrice))
+        setData(preve => [...preve].sort((a,b)=> a.sellingPrice - b.sellingPrice))
       }
 
 
       if(value === 'dsc'){
-        setData(preve => preve.sort((a,b)=> b.sellingPrice - a.sellingPrice))
+        setData(preve => [...preve].sort((a,b)=> b.sellingPrice - a.sellingPrice))
       }
     }
 
@@ -148,13 +167,47 @@ const CategoryProduct = () => {
 
            {/**right side(product) */}
            <div className='px-4'>
-             <p className='font-medium text-slate-800 text-lg my-2'>Search Results :{data.length} </p>
+             <p className='font-medium text-slate-800 text-lg my-2'>Search Results : {startItem}-{endItem} of {totalProduct} </p>
             <div className='min-h-[calc(100vh-120px)] overflow-y-scroll max-h-[calc(100vh-120px)]'>
             {
               data.length !== 0 &&  (
                 <VerticalCard data={data} loading={loading}/>
               )
             }
+            </div>
+
+            <div className='flex items-center justify-between gap-3 py-4 flex-wrap'>
+              <button
+                className='px-3 py-1 rounded border disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50'
+                onClick={() => handlePageChange(currentPage - 1)}
+                disabled={currentPage <= 1}
+              >
+                Prev
+              </button>
+
+              <div className='flex items-center gap-2 flex-wrap'>
+                {Array.from({ length: totalPage }, (_, index) => index + 1).map((pageNumber) => (
+                  <button
+                    key={pageNumber}
+                    className={`px-3 py-1 rounded border transition-colors ${
+                      pageNumber === currentPage
+                        ? 'bg-pink-500 text-white border-pink-500'
+                        : 'hover:bg-slate-50'
+                    }`}
+                    onClick={() => handlePageChange(pageNumber)}
+                  >
+                    {pageNumber}
+                  </button>
+                ))}
+              </div>
+
+              <button
+                className='px-3 py-1 rounded border disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-50'
+                onClick={() => handlePageChange(currentPage + 1)}
+                disabled={currentPage >= totalPage}
+              >
+                Next
+              </button>
             </div>
           </div>
       </div>

@@ -9,43 +9,67 @@ import SummaryApi from "./common";
 import Context from "./context";
 import { setUserDetails } from "./store/userSlice";
 import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch()
+  const location = useLocation()
   const [cartProductCount,setCartProductCount] = useState(0)
+  const skipAppBootstrapRequests = ["/success", "/cancel"].includes(location.pathname)
   
   const fetchUserDetails = async()=>{
-    const dataResponse = await fetch(SummaryApi.current_user.url,{
-      method : SummaryApi.current_user.method,
-      credentials : 'include'
-    })
+    try {
+      const dataResponse = await fetch(SummaryApi.current_user.url,{
+        method : SummaryApi.current_user.method,
+        credentials : 'include'
+      })
 
-    const dataApi = await dataResponse.json()
+      if (!dataResponse.ok) {
+        return
+      }
 
-    if(dataApi.success){
-      dispatch(setUserDetails(dataApi.data))
+      const dataApi = await dataResponse.json()
+
+      if(dataApi.success){
+        dispatch(setUserDetails(dataApi.data))
+      }
+    } catch (error) {
+      console.warn('Unable to load current user details:', error?.message || error)
     }
   }
 
   const fetchUserAddToCart = async()=>{
-    const dataResponse = await fetch(SummaryApi.addToCartProductCount.url,{
-      method : SummaryApi.addToCartProductCount.method,
-      credentials : 'include'
-    })
+    try {
+      const dataResponse = await fetch(SummaryApi.addToCartProductCount.url,{
+        method : SummaryApi.addToCartProductCount.method,
+        credentials : 'include'
+      })
 
-    const dataApi = await dataResponse.json()
+      if (!dataResponse.ok) {
+        return
+      }
 
-   setCartProductCount(dataApi?.data?.count)
+      const dataApi = await dataResponse.json()
+
+      setCartProductCount(dataApi?.data?.count || 0)
+    } catch (error) {
+      console.warn('Unable to load cart count:', error?.message || error)
+      setCartProductCount(0)
+    }
   }
 
  useEffect(()=>{
+    if (skipAppBootstrapRequests) {
+      return
+    }
+
     /**user Details */
 
     fetchUserDetails()
     /**user Details cart product */
     fetchUserAddToCart()
 
-  },[])
+  },[skipAppBootstrapRequests])
   return (
    <>
    <Context.Provider value= {{
