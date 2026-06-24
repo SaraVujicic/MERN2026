@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import SUCCESSIMAGE from '../assest/success.gif'
 import { Link, useLocation } from 'react-router-dom'
 import SummaryApi from '../common'
+import { useNavigate } from "react-router-dom";
 
 const Success = () => {
   const [isConfirming, setIsConfirming] = useState(true)
