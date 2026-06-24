@@ -6,7 +6,7 @@ async function authToken(req, res, next) {
 
         console.log("token", token)
         
-        // 1. POPRAVLJENO: Dodat status 401 za nepostojeći token
+        
         if(!token){
             return res.status(401).json({
                 message : "Please Login!",
@@ -19,7 +19,7 @@ async function authToken(req, res, next) {
             console.log(err)
             console.log("decoded", decoded)
 
-            // 2. POPRAVLJENO: Ako token nije validan, šaljemo grešku i NE idemo na next()
+            
             if(err){
                 console.log("error auth", err)
                 return res.status(401).json({
